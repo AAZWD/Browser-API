@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>API</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h1>You've been here for: </h1>
+    <section><span id ='num'></span><span id='plural'></span></section>
+
+    <script>
+        let count = 0;
+        let seconds = document.getElementById('num');
+        let plural = document.getElementById('plural');
+
+        function time() {
+            count++;
+            seconds.innerText = count;
+            if(count === 1){
+                plural.innerText = ' second';
+            }else{
+                plural.innerText = ' seconds';
+            }
+        }
+        setInterval(time, 1000);
+    </script>
+
+</body>
+
+</html>

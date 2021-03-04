@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Events</title>
+    <style>
+        .striked{
+            text-decoration: line-through;
+        }
+        li{
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let ul = document.createElement('ul');
+            document.body.appendChild(ul);
+            let chores = ['Groceries','Vacuum','Dishes','Laundry','Garbage'];
+            for(let x = 0; x<chores.length; x++){
+                let liC = document.createElement('li');
+                liC.innerText = chores[x];
+                ul.appendChild(liC);
+            }
+            let li = document.getElementsByTagName('li');
+            function strike (){
+                this.classList.toggle('striked');
+            }
+            for(let x=0; x<chores.length; x++){
+                li[x].onclick = strike;
+            }
+        }
+           
+    </script>
+</head>
+
+<body>
+    
+</body>
+
+</html>

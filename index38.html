@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Events</title>
+    <script>
+        window.onload = function () {
+            let html = document.querySelector('html');
+            let div = document.querySelector('div');
+            let fb = document.querySelector('button');
+            let sb = document.getElementById('secondButton');
+            let link = document.querySelector('a');
+            
+            div.style.fontSize = '20px';
+            div.style.color = 'red';
+            div.style.fontFamily = 'Arial';
+            div.style.paddingBottom = '20px';
+            
+            function clickHandler1() {
+                alert('You clicked an event listened element');
+            }
+            function clickHandler2() {
+                fb.removeEventListener('click', clickHandler1);
+            }
+
+            fb.addEventListener('click', clickHandler1);
+            sb.addEventListener('click', clickHandler2);
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                alert("This link doesn't send us to a differen page as we're preventing the default behaviour");
+            });
+            html.addEventListener('keypress', function(event){
+                let charCode = event.charCode;
+                let pressedKey = String.fromCharCode(charCode);
+                div.innerText =`You pressed the ${pressedKey} key with the ${charCode} code`;
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div></div>
+    <button id="firstButton">Click Me!!</button>
+    <button id="secondButton">Remove</button>
+    <a href="https://google.com">Link with JavaScript handler</a>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>API</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h1>Time left: </h1>
+    <section id ='end'><span id='num'></span><span id='plural'></span></section>
+
+    <script>
+        let seconds = document.getElementById('num');
+        let plural = document.getElementById('plural');
+        let end = document.getElementById('end');
+
+        let request = window.prompt('How many seconds?');
+        let left = request;
+
+        function countdown() {
+            left--;
+            if (left === 1) {
+                plural.innerText = ' second';
+            } else {
+                plural.innerText = ' seconds';
+            }
+            seconds.innerText = left;
+
+            if (left <= 0) {
+                clearInterval(id);
+                end.innerText = 'Your session has expired.'
+            }
+        }
+
+        let id = setInterval(countdown, 1000);
+
+    </script>
+</body>
+
+</html>

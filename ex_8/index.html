@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>API</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h1>Sum</h1>
+    <p id='result'>The final result is: </p>
+    <p id='count'>The user input __ numbers</p>
+    <p id='average'>The average: </p>
+
+    <script>
+        window.alert(`This program adds all the numbers you input`);
+        let sum = 0;
+        let count = 0;
+        let average = 0;
+        let confirm = true;
+        let resultID = document.getElementById('result');
+        let countID = document.getElementById('count');
+        let averageID = document.getElementById('average');
+
+        while (confirm) {
+            let num = window.prompt(`New number: `);
+            if(num === null){
+                break;
+            }
+            sum += (num/1);
+            count++;
+            average = sum/count;
+            confirm = window.confirm(`Add a number?`);
+        }
+
+        resultID.innerText = `The final result is: ${sum}`;
+        countID.innerText = `The user input ${count} numbers`;
+        averageID.innerText = `The average: ${average}`;
+    </script>
+</body>
+
+</html>

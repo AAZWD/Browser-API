@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Texts</title>
+  <script>
+    window.onload = function () {
+      let ul = document.querySelector('ul');
+      ul.innerHTML = '<li>Item 1</li><li>Item 2</li><li>Item 3</li><li>Item 4</li><li>Item 5</li>';
+      let length = ul.children.length;
+      for (let x = 0; x < length; x++) {
+        let li = ul.children[x];
+        console.log(li.innerHTML);
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Main Title</h1>
+  <p>This is a paragraph</p>
+  <ul></ul>
+</body>
+
+</html>

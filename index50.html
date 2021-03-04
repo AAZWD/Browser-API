@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Form elements event</title>
+    <style>
+        .error {
+            color: red;
+            background-color: pink;
+            border: 1px solid red;
+            padding: 5px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let form = document.querySelector('form');
+            let div = document.querySelector('div');
+
+            function validateOne(input) {
+                let regex = /^\w+$/i;
+                return regex.test(input);
+            }
+
+            function validateTwo(input) {
+                let regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+                return regex.test(input);
+            }
+
+            form.addEventListener('submit', (event) => {
+                let message = 'Please input a valid username and password and email';
+                let user = form.elements[0];
+                let pass = form.elements[1];
+                let email = form.elements[2];
+                if (!validateOne(user.value) ||
+                    !validateOne(pass.value) ||
+                    !validateTwo(email.value) ||
+                    user.value.length === 0 ||
+                    pass.value.length === 0 ||
+                    email.value.length === 0) {
+                    event.preventDefault();
+                    div.innerText = message;
+                    div.classList.add('error');
+                    return false;
+                }
+                div.innerText = '';
+                div.classList.remove('error');
+                return true;
+            });
+
+        }
+    </script>
+</head>
+
+<body>
+    <form action="save_user.html" method="post" enctype="application/x-www-form-urlencoded" name="login">
+        <input type="text" id="username" name="username" />
+        <input type="password" id="pass" name="pass" />
+        <input type="text" id="email" name="email" />
+        <input type="submit" name="submit" value="Send" />
+    </form>
+    <div id="errors"></div>
+</body>
+
+</html>

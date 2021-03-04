@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Events</title>
+    <script>
+        window.onload = function () {
+           let fb = document.querySelector('button');
+           let sb = document.getElementById('secondButton');
+           let link = document.querySelector('a'); 
+           let colours = ['red', 'blue', 'green'];
+
+           function clickHandler1(){
+               alert('You clicked an event listened element');
+           }
+           function clickHandler2(){
+               let x = Math.floor(Math.random() * 3); 
+                this.style.backgroundColor = colours[x];
+           }
+
+           fb.addEventListener('click', clickHandler1);
+           sb.addEventListener('click', clickHandler2);
+           link.addEventListener('click', function(event){
+              event.preventDefault();
+           });
+
+        }
+    </script>
+  </head>
+  <body>
+    <button id="firstButton">Click Me!!</button>
+    <button id="secondButton">Change Colour</button>
+    <a href="https://google.com">Link with JavaScript handler</a>
+  </body>
+</html>

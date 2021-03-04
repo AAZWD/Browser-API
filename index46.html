@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Form Properties</title>
+    <script>
+        window.onload = function () {
+            let form = document.querySelector('form');
+            let select = document.querySelector('select');
+            let div = document.createElement('div');
+            document.body.appendChild(div);
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                let index = select.selectedIndex;
+                let value = select.options[index].value;
+                let country = select.options[index].innerText;
+                div.innerText = `${country} has been selected, and it has ${value} as id`;
+
+            });
+            //%selectedCountry% has been selected and it has %optionValue% as id
+
+        }
+    </script>
+</head>
+
+<body>
+    <form action="save_usuario.html" method="post" enctype="application/x-www-form-urlencoded" name="login">
+        <select id="countries">
+            <option value="1">Argentina</option>
+            <option value="2">Brazil</option>
+            <option value="3">Canada</option>
+            <option value="4">Colombia</option>
+        </select>
+        <input type="submit" name="submit" value="Submit" />
+    </form>
+</body>
+
+</html>

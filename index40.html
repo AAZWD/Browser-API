@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Events</title>
+    <script>
+        window.onload = function () {
+            let link = document.querySelector('a');
+            let colours = ['red', 'blue', 'green', 'gray', 'white'];
+            let col;
+            let count = 0;
+            link.addEventListener('mouseover', () => {
+                if(count < colours.length) {
+                    col = colours[count];
+                    console.log(col);
+                    link.style.backgroundColor = `${col}`;
+                    count++;
+                }
+            });
+            link.addEventListener('mouseout', () => {
+                alert(`Background colour is: ${col}`);
+            });
+
+        }
+    </script>
+</head>
+
+<body>
+    <a href="">Link with JavaScript handler</a>
+</body>
+
+</html>

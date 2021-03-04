@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Events</title>
+    <script>
+        window.onload = function () {
+           let button = document.getElementById('firstbutton');
+           
+           function dontClick(){
+               alert('Stop');
+           }
+           button.onclick = dontClick;
+        }
+    </script>
+  </head>
+  <body>
+    <div></div>
+    <button id="firstbutton">Click me!!</button>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>API</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+      let user = window.prompt(`Username: `);
+      let pass = window.prompt(`Password: `);
+      window.alert(`Welcome ${user}`);
+
+      setTimeout(() => {
+        let confirm = window.confirm('Still want to be logged in?');
+        if(confirm){
+            window.alert(`${user} your session has been restored`);
+        }else{
+            window.alert(`${user} your session has expired\nYou will be redirected to Google.com`);
+            setTimeout(() => {
+                location.href = 'http://google.com';
+            }, 1000);
+        }
+      }, 10000);
+    </script>
+</head>
+
+<body>
+    <h1>Hi</h1>
+    <p>bye</p>
+</body>
+
+</html>

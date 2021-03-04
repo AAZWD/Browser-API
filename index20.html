@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Elements</title>
+  <style>
+    .red {
+      color: red;
+    }
+    
+    .green {
+      color: green;
+    }
+    
+    .orange {
+      color: orange;
+    }
+  </style>
+  <script>
+    window.onload = function (){
+        let ul = document.querySelector('ul');
+        let ulChildren = ul.children;
+        let liG = ulChildren.item(1);
+        let liR = ulChildren[3];
+        liG.setAttribute('class','green');
+        liR.setAttribute('class','red');
+        let parent = liG.parentElement;
+        parent.setAttribute('class', 'orange');
+    }
+</script>
+</head>
+<body>
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+  </ul>
+</body>
+</html>

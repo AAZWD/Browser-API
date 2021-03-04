@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Events</title>
+    <script>
+        window.onload = function () {
+            let first = document.getElementById('firstButton');
+            let div = document.querySelector('div');
+            let count = 0;
+
+
+
+            first.addEventListener('dblclick', function (event) {
+                count++;
+                console.log('count');
+                div.innerText = count;
+            });
+
+        }
+    </script>
+</head>
+
+<body>
+    <div></div>
+    <button id="firstButton">Click Me!!</button>
+</body>
+
+</html>

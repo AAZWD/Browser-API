@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>JSON</title>
+    <script>
+
+    window.onload = function () {
+        let apiURL ='https://swapi.co/api/films/';
+        fetch(apiURL)
+            //CHECK RESPONSE FIRST !!!!!
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(data){
+                for(let x = 0; x< data.length; x++){
+                    let temp = `title: ${data[x].filmtitle}\nepisode_id: ${data[x].filmID}\nrelease_date: ${data[x].filmReleaseDate}`;
+                    console.log(temp);
+                }
+            });
+    }
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Attributes</title>
+    <style>
+        a {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .menu {
+            display: block;
+            width: 400px;
+            border: 1px solid black;
+            background-color: #eee;
+            padding: 5px 0 5px 10px;
+        }
+
+        a.menu {
+            color: black;
+            text-decoration: none;
+        }
+
+        a.menu:hover {
+            background-color: #DDD;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let link = document.querySelector('a');
+            let attribute1n = link.attributes[0].name;
+            let attribute1v = link.attributes[0].value;
+            let attribute2n = link.attributes[1].name;
+            let attribute2v = link.attributes[1].value;
+            console.log(`${attribute1n}: ${attribute1v}\n${attribute2n}: ${attribute2v}`);
+        }
+    </script>
+</head>
+
+<body>
+    <a href="#" class="menu">Link 1</a>
+    <a href="#" class="menu">Link 2</a>
+    <a href="#" class="menu">Link 3</a>
+    <a href="#" class="menu">Link 4</a>
+    <a href="#" class="menu">Link 5</a>
+</body>
+
+</html

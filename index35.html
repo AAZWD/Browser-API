@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Events</title>
+    <script>
+        window.onload = function () {
+            let fb = document.querySelector('button');
+            let sb = document.getElementById('secondButton');
+            let link = document.querySelector('a');
+
+            function clickHandler1() {
+                alert('You clicked an event listened element');
+            }
+            function clickHandler2() {
+                fb.removeEventListener('click', clickHandler1);
+            }
+
+            fb.addEventListener('click', clickHandler1);
+            sb.addEventListener('click', clickHandler2);
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                alert("This link doesn't send us to a differen page as we're preventing the default behaviour");
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <button id="firstButton">Click Me!!</button>
+    <button id="secondButton">Remove</button>
+    <a href="https://google.com">Link with JavaScript handler</a>
+</body>
+
+</html>
